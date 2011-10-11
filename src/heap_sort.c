@@ -35,10 +35,12 @@ static void heapify(size_t n, int *heap, size_t index) {
 }
 
 static void update(size_t n, int *heap, size_t index) {
+  size_t parent_index;
+
   if (index == 0)
     return;
 
-  size_t parent_index = parent(index);
+  parent_index = parent(index);
   if (heap[index] > heap[parent_index]) {
     swap(heap, index, parent_index);
     update(n, heap, parent_index);
