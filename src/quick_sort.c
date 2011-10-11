@@ -2,13 +2,8 @@
 #include <stdlib.h>
 
 #include "quick_sort.h"
+#include "utils.h"
 
-
-static void swap(int *buffer, size_t i, size_t j) {
-  int tmp = buffer[i];
-  buffer[i] = buffer[j];
-  buffer[j] = tmp;
-}
 
 static void partition(size_t n, int *array, bool randomized,
 		      size_t *left, size_t *right) {
