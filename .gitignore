@@ -3,3 +3,7 @@
 
 # Ignore generated tests
 tests/*.txt
+
+# Ignore bin and obj directories
+bin/*
+obj/*
