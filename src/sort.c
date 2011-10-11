@@ -6,7 +6,7 @@
 #include "insertion_sort.h"
 #include "merge_sort.h"
 #include "quick_sort.h"
-#include "std_sort.h"
+#include "std_qsort.h"
 #include "io.h"
 
 
@@ -15,7 +15,7 @@ typedef void (*sorting_method) (size_t, int*);
 
 static void display_usage(int argc, char **argv,
 			  size_t num_methods,
-			  const char **names) {
+			  const char * const* names) {
     size_t i;
 
     fprintf(stderr, "Usage: ./%s [sorting method]\n", argv[0]);
@@ -26,7 +26,7 @@ static void display_usage(int argc, char **argv,
 }
 
 sorting_method select_method(size_t num_methods,
-			     const char ** names,
+			     const char * const * names,
 			     sorting_method * methods,
 			     const char *name) {
   size_t i = 0;
@@ -39,7 +39,7 @@ sorting_method select_method(size_t num_methods,
 
 
 int main(int argc, char **argv) {
-  const char * sorting_method_names[] = {
+  const char * const sorting_method_names[] = {
     "insertion_sort",
     "merge_sort",
     "quick_sort",

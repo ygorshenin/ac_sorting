@@ -18,6 +18,8 @@ def parse_flags(argv)
     options[:modulo] = v }
   parser.on('-n', '--num_records=NUM_RECORDS', Integer) { |v|
     options[:num_records] = v }
+  parser.on('-s', '--seed=SEED', Integer) { |v|
+    options[:seed] = v }
 
   parser.parse(*argv)
 
@@ -32,6 +34,8 @@ def parse_flags(argv)
 end
 
 options = parse_flags(ARGV)
+
+srand options[:seed] if options.has_key? :seed
 
 puts options[:num_records]
 options[:num_records].times do |i|
