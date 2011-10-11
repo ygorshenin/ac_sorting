@@ -12,9 +12,10 @@
    always the highest value in the heap. */
 void make_heap(size_t n, int *array);
 
-/* Given a heap range [0, n - 1), this function extends the range
-   considered a heap to [0, n) by placing the value in (n - 1) into
-   its corresponding location in it. */
+/* Given a range [0, n - 1) that satisfies the heap property,
+   push_heap extends this range to [0, n) by placing
+   the value at index (n - 1) to its appropriate location in the
+   heap. */
 void push_heap(size_t n, int *heap);
 
 /* Rearranges the elements in the range [0, n) in such a way that the
