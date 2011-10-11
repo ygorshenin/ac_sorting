@@ -14,7 +14,6 @@ static inline size_t right_child(size_t index) {
   return 2 * index + 2;
 }
 
-// Index must be greater than zero.
 static inline size_t parent(size_t index) {
   return (index - 1) / 2;
 }
@@ -35,24 +34,14 @@ static void heapify(size_t n, int *heap, size_t index) {
   }
 }
 
-static void update(size_t n, int *heap, size_t index, int value) {
-  if (value == heap[index])
-    ;
-  else if (value < heap[index]) {
-    heap[index] = value;
-    heapify(n, heap, index);
-  } else {
-    size_t parent_index;
+static void update(size_t n, int *heap, size_t index) {
+  if (index == 0)
+    return;
 
-    while (index != 0) {
-      parent_index = parent(index);
-      if (heap[parent_index] >= value)
-	break;
-
-      heap[index] = heap[parent_index];
-      index = parent_index;
-    }
-    heap[index] = value;
+  size_t parent_index = parent(index);
+  if (heap[index] > heap[parent_index]) {
+    swap(heap, index, parent_index);
+    update(n, heap, parent_index);
   }
 }
 
@@ -63,9 +52,8 @@ void make_heap(size_t n, int *array) {
     heapify(n, array, n - i - 1);
 }
 
-void push_heap(size_t n, int *heap, int value) {
-  heap[n] = INT_MIN;
-  update(n + 1, heap, n, value);
+void push_heap(size_t n, int *heap) {
+  update(n, heap, n - 1);
 }
 
 void pop_heap(size_t n, int *heap) {
