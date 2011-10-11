@@ -1,0 +1,5 @@
+# Ignore Emacs backup files
+*~
+
+# Ignore generated tests
+tests/*.txt
