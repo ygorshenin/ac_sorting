@@ -34,7 +34,7 @@ static void heapify(size_t n, int *heap, size_t index) {
   }
 }
 
-static void update(size_t n, int *heap, size_t index) {
+static void increase_key(size_t n, int *heap, size_t index) {
   size_t parent_index;
 
   if (index == 0)
@@ -43,7 +43,7 @@ static void update(size_t n, int *heap, size_t index) {
   parent_index = parent(index);
   if (heap[index] > heap[parent_index]) {
     swap(heap, index, parent_index);
-    update(n, heap, parent_index);
+    increase_key(n, heap, parent_index);
   }
 }
 
@@ -55,7 +55,7 @@ void make_heap(size_t n, int *array) {
 }
 
 void push_heap(size_t n, int *heap) {
-  update(n, heap, n - 1);
+  increase_key(n, heap, n - 1);
 }
 
 void pop_heap(size_t n, int *heap) {
