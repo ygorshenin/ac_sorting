@@ -1,0 +1,51 @@
+HOW TO INSTALL:
+
+Mac
+
+You must have XCode installed (you need gcc). XCode comes on a CD with
+your Mac. Go to the project root directory and type:
+make
+ruby tests/test_generator.rb
+
+Probably you don't need to install ruby --- it's already installed.
+
+
+Linux
+
+If you're Ubuntu user, download and install binutils and ruby:
+sudo apt-get install -y binutils ruby
+
+After that, go to the project root directory and type:
+make
+ruby tests/test_generator.rb
+
+If you're using another Linux distribution, use appropriate package manager.
+
+
+Windows
+
+Download and install MinGW (http://www.mingw.org), and all you need to
+build the project is to open command window, go to the project
+directory and type:
+make
+
+But it's also possible to build this project with Microsoft Visual
+Studio. To do this, create New project in Visual Studio and add all
+files from src/ subdirectory.
+
+Also, download and install ruby from http://rubyinstaller.org.  After
+installation, type in command window (from project directory):
+ruby tests/test_generator.rb
+
+HOW TO USE:
+
+After installation you will find sorter binary in bin/ subdirectory.
+Type in console (command window for Windows users):
+bin/sorter (bin\sorter for Windows users).
+
+You'll see 'usage' message which describes how to use this program.
+For instance, type:
+bin/sorter randomized_quick_sort < tests/random_10.txt
+
+NOTE: If you use Visual Studio and need the binaries it's up to you to
+find them.
