@@ -7,6 +7,7 @@
 #include "insertion_sort.h"
 #include "merge_sort.h"
 #include "quick_sort.h"
+#include "radix_sort.h"
 #include "std_qsort.h"
 #include "io.h"
 
@@ -47,6 +48,7 @@ int main(int argc, char **argv) {
     "randomized_quick_sort",
     "std_qsort",
     "heap_sort",
+    "radix_sort",
   };
 
   sorting_method methods[] = {
@@ -56,6 +58,7 @@ int main(int argc, char **argv) {
     &randomized_quick_sort,
     &std_qsort,
     &heap_sort,
+    &radix_sort,
   };
 
   const size_t num_methods =

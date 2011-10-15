@@ -2,7 +2,7 @@ BINDIR=bin
 OBJDIR=obj
 SRCDIR=src
 OBJS=$(addprefix $(OBJDIR)/,sort.o insertion_sort.o merge_sort.o \
-	quick_sort.o std_qsort.o heap_sort.o utils.o io.o)
+	quick_sort.o std_qsort.o heap_sort.o utils.o radix_sort.o io.o)
 PROGRAM=$(addprefix $(BINDIR)/,sort)
 
 G++=g++
